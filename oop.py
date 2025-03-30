@@ -49,3 +49,49 @@ phone2.take_photo()  # Taking a photo with 48MP camera...
 print("Old Price:", phone1.get_price())  # 799
 phone1.set_price(750)  # Updating price
 print("New Price:", phone1.get_price())  # 750
+
+
+
+# question 2
+
+# Parent class (Base)
+class Entity:
+    def move(self):
+        pass  # Abstract move method
+
+# Animal classes
+class Dog(Entity):
+    def move(self):
+        print("🐕 Running on four legs!")
+
+class Bird(Entity):
+    def move(self):
+        print("🐦 Flying in the sky!")
+
+class Snake(Entity):
+    def move(self):
+        print("🐍 Slithering on the ground!")
+
+# Vehicle classes
+class Car(Entity):
+    def move(self):
+        print("🚗 Driving on the road!")
+
+class Boat(Entity):
+    def move(self):
+        print("⛵ Sailing on the water!")
+
+class Plane(Entity):
+    def move(self):
+        print("✈️ Flying in the air!")
+
+# Function to demonstrate polymorphism
+def action(entity):
+    entity.move()
+
+# Creating objects
+entities = [Dog(), Bird(), Snake(), Car(), Boat(), Plane()]
+
+# Calling move() polymorphically
+for e in entities:
+    action(e)
